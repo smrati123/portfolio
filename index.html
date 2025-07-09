@@ -5,328 +5,345 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smrati Sengar - Senior Software Engineer</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+  html {
+    scroll-behavior: smooth;
+  }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #a2a6bb, #1f1c24);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+  }
 
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+  header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
 
-        .profile-section {
-            position: relative;
-            z-index: 1;
-        }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+  }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 5px solid #667eea;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
-        .profile-img:hover {
-            transform: scale(1.1);
-        }
+  .profile-section {
+    position: relative;
+    z-index: 1;
+  }
 
-        h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 5px solid #667eea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
 
-        .title {
-            font-size: 1.2em;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
+  .profile-img:hover {
+    transform: scale(1.1);
+  }
 
-        .location {
-            color: #34495e;
-            font-size: 0.9em;
-            margin-bottom: 20px;
-        }
+  h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+  .title {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
 
-        .contact-item {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background: rgba(102, 126, 234, 0.1);
-        }
+  .location {
+    color: #34495e;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
 
-        .contact-item:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
 
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+  .contact-item {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(102, 126, 234, 0.1);
+  }
 
-        .section:hover {
-            transform: translateY(-5px);
-        }
+  .contact-item:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+  }
 
-        .section h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
+  .section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.6s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
 
-        .about-text {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #34495e;
-            text-align: justify;
-        }
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-        .experience-item {
-            border-left: 4px solid #667eea;
-            padding-left: 20px;
-            margin-bottom: 30px;
-            position: relative;
-        }
+  .section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+  }
 
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-        }
+  .about-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #34495e;
+    text-align: justify;
+  }
 
-        .job-title {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
+  .experience-item {
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+  }
 
-        .company {
-            color: #667eea;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
+  .experience-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: #667eea;
+    border-radius: 50%;
+  }
 
-        .duration {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
+  .job-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+  }
 
-        .job-description {
-            color: #34495e;
-            line-height: 1.6;
-        }
+  .company {
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
 
-        .job-description ul {
-            margin-left: 20px;
-        }
+  .duration {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
 
-        .job-description li {
-            margin-bottom: 5px;
-        }
+  .job-description {
+    color: #34495e;
+    line-height: 1.6;
+  }
 
-        .project-item {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #dee2e6;
-            transition: all 0.3s ease;
-        }
+  .job-description ul {
+    margin-left: 20px;
+  }
 
-        .project-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
+  .job-description li {
+    margin-bottom: 5px;
+  }
 
-        .project-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
+  .project-item {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+  }
 
-        .project-duration {
-            color: #667eea;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
+  .project-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
 
-        .project-description {
-            color: #34495e;
-            line-height: 1.6;
-        }
+  .project-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
 
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+  .project-duration {
+    color: #667eea;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
 
-        .skill-tag {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
+  .project-description {
+    color: #34495e;
+    line-height: 1.6;
+  }
 
-        .skill-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
 
-        .education-item {
-            border-left: 4px solid #667eea;
-            padding-left: 20px;
-            margin-bottom: 20px;
-            position: relative;
-        }
+  .skill-tag {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
 
-        .education-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-        }
+  .skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  }
 
-        .degree {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
+  .education-item {
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    position: relative;
+  }
 
-        .institution {
-            color: #667eea;
-            margin-bottom: 5px;
-        }
+  .education-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: #667eea;
+    border-radius: 50%;
+  }
 
-        .year {
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
+  .degree {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+  }
 
-        .score {
-            color: #27ae60;
-            font-weight: 500;
-        }
+  .institution {
+    color: #667eea;
+    margin-bottom: 5px;
+  }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            header {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .section {
-                padding: 20px;
-            }
-        }
-    </style>
+  .year {
+    color: #7f8c8d;
+    font-size: 0.9em;
+  }
+
+  .score {
+    color: #27ae60;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+
+    header {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    .contact-info {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .section {
+      padding: 20px;
+    }
+  }
+</style>
+
 </head>
 <body>
     <div class="container">
         <header>
             <div class="profile-section">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiByeD0iNzUiIGZpbGw9IiM2NjdlZWEiLz4KPHN2ZyB4PSIzNyIgeT0iMzAiIHdpZHRoPSI3NiIgaGVpZ2h0PSI5MCIgdmlld0JveD0iMCAwIDc2IDkwIiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTM4IDMwQzQ1LjE3OTcgMzAgNTEgMjQuMTc5NyA1MSAxN0M1MSA5LjgyMDMgNDUuMTc5NyA0IDM4IDRDMzAuODIwMyA0IDI1IDkuODIwMyAyNSAxN0MyNSAyNC4xNzk3IDMwLjgyMDMgMzAgMzggMzBaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgNzRWNjhDMTIgNTQuNzQ1MiAyMi43NDUyIDQ0IDM2IDQ0SDQwQzUzLjI1NDggNDQgNjQgNTQuNzQ1MiA2NCA2OFY3NEgxMloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Smrati Sengar" class="profile-img">
+                <img src="SmratiSengar.jpg" alt="Smrati Sengar" class="profile-img">
                 <h1>Smrati Sengar</h1>
                 <p class="title">Senior Software Engineer</p>
                 <p class="location">📍 Sector 44, Noida, GB Nagar 201301</p>
                 <div class="contact-info">
                     <a href="tel:+919650484586" class="contact-item">📞 +91-9650484586</a>
                     <a href="mailto:smrati.official@gmail.com" class="contact-item">✉️ smrati.official@gmail.com</a>
-                    <a href="#" class="contact-item">💼 LinkedIn</a>
-                    <a href="#" class="contact-item">🐱 GitHub</a>
+                    <a href="https://www.linkedin.com/in/smrati-sengar-761206163" target="_blank" rel="noopener noreferrer" class="contact-item">💼 LinkedIn</a>
+                    <a href="https://github.com/smrati123" target="_blank" rel="noopener noreferrer" class="contact-item">🐱 GitHub</a>
+
                 </div>
             </div>
         </header>
@@ -494,4 +511,26 @@
         </section>
     </div>
 </body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Animate once
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
 </html>
